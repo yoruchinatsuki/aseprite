@@ -18,7 +18,7 @@ jobs:
           - build_type: RelWithDebInfo
             scripting: noscripts
     steps:
-    - uses: actions/checkout@v4
+    - uses: actions/checkout@v7
       with:
         submodules: 'recursive'
     - name: Install Dependencies
@@ -99,12 +99,12 @@ jobs:
         fi
         cd build && $XVFB ctest --output-on-failure
     - name: artifacts main exe
-      uses: actions/upload-artifact@v3
+      uses: actions/upload-artifact@v7
       with:
         name: build_outs_exe
         path: build/bin/*asep*exe
     - name: artifact build/data dir
-      uses: actions/upload-artifact@v3
+      uses: actions/upload-artifact@v7
       with:
         name: prog_data
         path: build/bin/data/*
